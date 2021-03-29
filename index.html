@@ -21,14 +21,76 @@
     
 </head>
 <body>
-    <div class="background">
-        <div class="vue_box">
-            
-        </div>
+    <div id="vue_box">
+        <aside>
+
+            <div class="aside_top">
+                <!--  ? section 1 user_nav  -->
+                <div class="aside_nav">
+                    <div class="user_profile">
+                        <img class="profile_pic" src="img/avatar_io.jpg" alt="Mia immagine del profilo">
+                        <p>Nome Utente</p>
+                    </div>
+
+                    <ul>
+                        <li> <i class="fas fa-circle-notch"></i> </li>
+                        <li> <i class="fas fa-ellipsis-v"></i> </li>
+                        <li> <i class="fas fa-comment-alt"></i> </li>
+                    </ul>
+                </div>
+
+                <!--  ? section 2  notifiche  -->
+                <div class="notifications">
+                    <div class="notification_icon">
+                        <i class="fas fa-bell-slash"></i>
+                    </div>
+                    <div class="notification_text">
+                        <p>Ricevi notifiche di nuovi messaggi</p>
+                        <a href="https://faq.whatsapp.com/web/chats/how-to-manage-your-notifications">Attiva notifiche desktop</a>
+                    </div>
+                </div>
+                <!-- ? section 3  search -->
+                <div class="search">
+                    <!-- <i>, cerca con label and input -->
+                </div>
+            </div>
+            <!-- ? section 4 chat previews-->
+            <div class="aside_main">
+                <ul>
+                    <li>
+                        <img class="profile_pic" src="img/avatar_1.jpg" alt="not an image yet">
+                        <p>nome</p> 
+                        <small>message preview</small> 
+                    </li>
+                    <li>
+                        <img class="profile_pic" src="img/avatar_1.jpg" alt="not an image yet">
+                        <p>nome</p> 
+                        <small>message preview</small> 
+                    </li>
+                    <li>
+                        <img class="profile_pic" src="img/avatar_1.jpg" alt="not an image yet">
+                        <p>nome</p> 
+                        <small>message preview</small> 
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <main>
+            <div class="main_nav">
+
+            </div>
+            <div id="chat_messages">
+
+            </div> 
+            <div class="chat_input">
+
+            </div>
+        </main>
     </div>
 
 
-    
+
     <!-- File JavaScript da mettere a fine HTML-->
     <script src="script.js" charset="utf-8"></script> 
 </body>

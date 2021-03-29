@@ -91,4 +91,4 @@ var vue_box = new Vue (
         }
     }
 );
-alert("HEllo")
+// alert("HEllo");   
