@@ -31,7 +31,8 @@ body {
 
 /******************** ASIDE */
 aside {
-    background-color: white;
+    /* background-color: #fafafa; */
+    background-color: blue;
     width: 30%;
     min-width: 350px;
     float: left;
@@ -46,8 +47,7 @@ aside {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-
-        border: olivedrab 2px solid;
+        /* border: olivedrab 2px solid; */
 }
 .aside_nav .user_profile img, 
 .aside_nav .user_profile p {
@@ -94,11 +94,32 @@ aside {
 }
 
     /* ! section 3 search*/
-
+.search {
+    display: flex;
+    padding: 8px
+}
+.search * {
+    border: #fafafa solid 1px ;
+}
+.search input{
+    width: 100%;
+    padding: 10px;
+}
+.search i {
+    padding: 10px 30px;
+    color:   #B1B1B1;
+}
     
     /* ! section 4 chat previews*/
+.aside_main {
+        border: darkgoldenrod 3px solid;
+}
 
-
+.aside_main ul li{
+    padding: 8px;
+    list-style-type: none;
+        border: yellow solid 3px;
+}
 /******************** ASIDE */
 main {
     width: 70%;
