@@ -3,6 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+     /* border: black 1px solid; */
 }
 
 body {
@@ -11,6 +13,8 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 #vue_box {
@@ -19,26 +23,27 @@ body {
     margin: auto;
     margin-top: 23px;
     margin-bottom: 23px;
-
     height: calc(100% - 46px) ;
-        border: blue 3px solid;
+        /* border: blue 3px solid; */
 }
 
 .profile_pic {
     border-radius: 50%;
     height: 60px;
 }
-
+p {
+    font-weight: 600;
+}
 /******************** ASIDE */
 aside {
-    /* background-color: #fafafa; */
-    background-color: blue;
+    background-color: #fafafa;
+    /* background-color: blue; */
     width: 30%;
     min-width: 350px;
     float: left;
     height: 100%;
 
-        border: red 3px solid;
+        /* border: red 3px solid; */
 }
 
     /* ? section 1 user_nav */
@@ -59,12 +64,15 @@ aside {
     display: inline-block;
     list-style: none;
     font-size: 20px;
-    padding: 5px;
-
+    padding: 10px;
 }
 .aside_nav ul li i{
     color: #B1B1B1;
 }
+.aside_nav ul li i:hover{
+    color: #666666;
+}
+
     /* ? section 2  notifiche*/
 .notifications {
     background-color: #8EDAFC;
@@ -93,12 +101,13 @@ aside {
     color: #4f7485;
 }
 
-    /* ! section 3 search*/
+    /* ? section 3 search*/
 .search {
     display: flex;
     padding: 8px
 }
 .search * {
+    background-color: white;
     border: #fafafa solid 1px ;
 }
 .search input{
@@ -112,19 +121,46 @@ aside {
     
     /* ! section 4 chat previews*/
 .aside_main {
-        border: darkgoldenrod 3px solid;
+    height: calc(100% - 232px);
+        /* border: darkgoldenrod 1px solid; */
 }
-
 .aside_main ul li{
+    position: relative;
     padding: 8px;
     list-style-type: none;
-        border: yellow solid 3px;
+        /* border: yellow solid 3px; */
 }
-/******************** ASIDE */
+.aside_main ul li img, 
+.aside_main ul li .not_imm{
+    display: inline-block;
+    vertical-align: text-top;
+
+}
+.aside_main ul li:after{
+    content: "";
+    position: absolute;
+    /* original:
+    width: 90%; 
+    left: 15px;
+    right: 15px;
+     */
+    left: 0;
+    right: 0;
+    height: 1px; 
+    background: #f5f5f5;
+    top: 100%;
+
+
+    /* border: black 3px solid; */
+}
+
+
+    /******************** ASIDE */
 main {
-    width: 70%;
+    width: 69%;
     float: right;
     height: 100%;
+    /* display: inline-block; */
 
         border: palevioletred 3px solid;
 }
