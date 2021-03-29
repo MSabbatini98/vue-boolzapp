@@ -39,22 +39,28 @@ aside {
 
         border: red 3px solid;
 }
+
     /* ? section 1 user_nav */
 .aside_nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
+
         border: olivedrab 2px solid;
 }
 .aside_nav .user_profile img, 
 .aside_nav .user_profile p {
     display: inline-block;
     vertical-align: middle;
+    margin: 5px;
 } 
-
 .aside_nav ul li {
     display: inline-block;
     list-style: none;
+    font-size: 20px;
+    padding: 5px;
+
 }
 .aside_nav ul li i{
     color: #B1B1B1;
@@ -74,7 +80,8 @@ aside {
     display: inline-block;
     background-color: white;
     border-radius: 50%;
-    padding: 15px;
+    padding: 14px 12px;
+    margin-right: 10px;
         /* border: orchid 3px solid; */
 }
 .notification_icon i{
@@ -85,10 +92,14 @@ aside {
     font-size: 0.8em;
     color: #4f7485;
 }
-    /* ? section 3 search*/
 
-    /* ? section 4 chat previews*/
+    /* ! section 3 search*/
 
+    
+    /* ! section 4 chat previews*/
+
+
+/******************** ASIDE */
 main {
     width: 70%;
     float: right;
