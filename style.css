@@ -9,7 +9,7 @@
 
 body {
     background: rgb(0,150,136);
-    background: linear-gradient(180deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 15%, rgba(219,219,210,1) 15%);
+    background: linear-gradient(180deg, rgba(0,150,136,1) 0%, rgba(0,150,136,1) 16%, rgba(219,219,210,1) 16%);
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
@@ -34,6 +34,9 @@ body {
 p {
     font-weight: 600;
 }
+.active {
+    background-color: #e9ebeb;
+}
 /******************** ASIDE */
 aside {
     background-color: #fafafa;
@@ -51,7 +54,7 @@ aside {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
         /* border: olivedrab 2px solid; */
 }
 .aside_nav .user_profile img, 
@@ -104,7 +107,8 @@ aside {
     /* ? section 3 search*/
 .search {
     display: flex;
-    padding: 8px
+    padding: 8px;
+    border-bottom: 2px #fafafa solid 
 }
 .search * {
     background-color: white;
@@ -119,7 +123,7 @@ aside {
     color:   #B1B1B1;
 }
     
-    /* ! section 4 chat previews*/
+    /* todo section 4 chat previews*/
 .aside_main {
     height: calc(100% - 232px);
         /* border: darkgoldenrod 1px solid; */
@@ -155,12 +159,74 @@ aside {
 }
 
 
-    /******************** ASIDE */
+    /******************** MAIN */
 main {
-    width: 69%;
+    width: 70%;
     float: right;
     height: 100%;
-    /* display: inline-block; */
+        /* border: palevioletred 3px solid; */
+}
 
-        border: palevioletred 3px solid;
+    /* ? MAIN NAV */
+.main_nav {
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: space-between;
+}
+.main_nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+        /* border: olivedrab 2px solid; */
+}
+.main_nav ul li {
+    display: inline-block;
+    list-style: none;
+    font-size: 20px;
+    padding: 10px;
+}
+.main_nav .contact_info img,
+.main_nav .contact_info .side_text {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 5px;
+}
+.main_nav ul li i{
+    color: #B1B1B1;
+}
+.main_nav ul li i:hover{
+    color: #666666;
+}
+
+    /* ! MAIN CHAT SPACE */
+#chat_messages {
+    background: url("img/mine.jpg");
+    height: calc(100% - 150px);
+}
+        /* todo MESSAGGI */
+.sent{
+    background-color: seagreen;
+}
+.received{
+    background-color: royalblue;
+}
+
+    /* ! MAIN TEXT INPUT */
+.chat_input {
+    height: 70px;
+    vertical-align: middle;
+    padding: 20px;
+    background-color: red;
+}
+.chat_input ul {
+    display: flex;
+    justify-content: space-between;
+}
+.chat_input ul li {
+    display: inline-block;
+}
+hl li .fake_input input {
+    width: 100%;
+    background-color: sienna;
 }
