@@ -58,25 +58,15 @@
             <!-- ! section 4 chat previews-->
             <div class="aside_main">
                 <ul>
-                    <li class="active">
+                    <!-- class="active" -->
+                    <li  v-for = "(contact, index) in contacts">
                         <img class="profile_pic" src="img/avatar_1.jpg" alt="not an image yet">
                         <div class="not_imm">
-                            <p class= "user_name ">nome</p> 
+                            <p class= "user_name "> {{contact.name}}</p> 
                         </div>
                          
                     </li>
-                    <li>
-                        <img class="profile_pic" src="img/avatar_1.jpg" alt="not an image yet">
-                        <div class="not_imm">
-                            <p class= "user_name ">nome</p> 
-                        </div>
-                    </li>
-                    <li>
-                        <img class="profile_pic" src="img/avatar_1.jpg" alt="not an image yet">
-                        <div class="not_imm">
-                            <p class= "user_name ">nome</p> 
-                        </div>
-                    </li>
+                    
                 </ul>
             </div>
         </aside>
