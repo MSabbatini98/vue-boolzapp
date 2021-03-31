@@ -48,7 +48,7 @@
                         <a href="https://faq.whatsapp.com/web/chats/how-to-manage-your-notifications">Attiva notifiche desktop</a>
                     </div>
                 </div>
-                <!--  section 3  search -->
+                <!--  ? section 3  search -->
                 <div class="search">
                     <label for="chat_search"><i class="fas fa-search"></i></label> 
                     <input id="chat_search" type="text" placeholder="Cerca o inizia una nuova chat">
@@ -58,11 +58,12 @@
             <!-- ! section 4 chat previews-->
             <div class="aside_main">
                 <ul>
-                    <!-- class="active" -->
-                    <li  v-for = "(contact, index) in contacts">
+                    <li v-for = "(contact, index) in contacts" @click ="contact_index = index">
+                        <!-- Immagine profilo -->
                         <img class="profile_pic" :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt=" 'foto profilo di ' + contact.name">
-                        <div class="not_imm">
-                            <p class= "user_name "> {{contact.name}}</p> 
+                        
+                        <div class= "user_name ">
+                            <p > {{contact.name}}</p> 
                         </div>
                          
                     </li>
@@ -78,7 +79,7 @@
                     <img class ="profile_pic" src="img/avatar_8.jpg" alt="">
                     <div class="side_text">
                         <!-- todo if active, print {{contact.name}} -->
-                        <p>{.{nome_utente}.}</p>
+                        <!-- <p>{{contact[contact_index].name}}</p> -->
                         <small>
                             Ultimo accesso 
                             <!-- todo inserire numero random tra 0 e 1M, calcolare giorni, e inserire "ultimo accesso secs fa/ore fa/ giorni fa/..." -->
@@ -96,8 +97,10 @@
 
             <!-- zona messaggi -->
             <div id="chat_messages">
-                <p class ="sent">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, modi dolorem libero, debitis voluptas harum adipisci doloremque mollitia fugit explicabo nulla vero aspernatur voluptatibus eveniet dolor in perspiciatis laboriosam a!
+                <p class="sent">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione at unde amet impedit a, officia praesentium quos temporibus modi odit repellendus quo optio nostrum fugit earum mollitia animi. Ea, iusto.
+
+
                 </p>
                 <p class ="received">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam consequuntur sunt, suscipit, dolores quia, repudiandae ex natus modi aliquam cumque officiis totam autem aperiam pariatur sapiente qui. Iure, iusto in.
@@ -109,12 +112,17 @@
                     <li class="new_message">
                         <input type="text" placeholder="Scrivi un messaggio">
                     </li>
-                    <li id ="microphone">
-                        <i class="fas fa-microphone"></i>
+                    <li >
+                        <button>
+                            <i class="fas fa-microphone"></i>
+                        </button>
                     </li>
                 </ul>
-                
             </div>
+            <!-- <div class="recording_box">
+                <!-- todo add counter in secs -->
+                Hello
+            </div> -->
         </main>
     </div>
 

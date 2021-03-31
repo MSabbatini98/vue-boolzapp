@@ -86,10 +86,12 @@ var vue_box = new Vue (
                         }
                     ],
                 },
-            ]
-            
+            ],
+            contact_index : 0,
+            // record : false,
         },
         methods : {
+            
             
             
         }

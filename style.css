@@ -135,15 +135,19 @@ aside {
 }
 .aside_main ul li{
     position: relative;
-    padding: 8px;
+    padding: 12px 8px;
     list-style-type: none;
-        /* border: yellow solid 3px; */
+    cursor: pointer;
+    border-bottom: blue solid 3px;
 }
+.aside_main ul li:first-child{
+    border-top: red solid 3px;
+}
+
 .aside_main ul li img, 
-.aside_main ul li .not_imm{
+.aside_main ul li .user_name{
     display: inline-block;
     vertical-align: text-top;
-
 }
 .aside_main ul li:after{
     content: "";
@@ -271,8 +275,24 @@ main {
     border: none;
     padding: 10px;
 }
-
-#microphone: {
+.chat_input button {
+    border: none;
+    outline: none;
+}
+.chat_input button:active i{
     color: red;
-
+}
+/*! Recording slider*/
+/*
+.chat_input button:active .recording_box{
+    display: inline-block;
+}
+.recording_box {
+    position: absolute;
+    transition: 1s;
+    animation: slideIn 200 timing-function delay iteration-count direction fill-mode;
+} */
+.recording {
+    color: red;
+    transform: scale(1.5);
 }
