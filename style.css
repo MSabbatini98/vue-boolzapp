@@ -126,6 +126,7 @@ aside {
     /* todo section 4 chat previews*/
 .aside_main {
     height: calc(100% - 232px);
+    overflow-y: scroll;
         /* border: darkgoldenrod 1px solid; */
 }
 .aside_main ul li{
@@ -199,20 +200,38 @@ main {
     color: #666666;
 }
 
-    /* ! MAIN CHAT SPACE */
+    /* ! MAIN CHAT MESSAGES */
 #chat_messages {
     background: url("img/mine.jpg");
     height: calc(100% - 150px);
 }
         /* todo MESSAGGI */
+
+#chat_messages{
+    display: flex;
+    flex-direction: column;
+}
+.sent,
+.received{
+    width: 40%;
+    padding: 15px;
+    padding-bottom: 20px;
+    border-radius: 12px;
+    margin-top: 10px;
+}
 .sent{
-    background-color: seagreen;
+    margin-right: 8%;
+    background-color: #d5f9ba;
+    align-self: flex-end;
+
 }
 .received{
-    background-color: royalblue;
+    margin-left: 8%;
+    background-color: white;
+    align-self: flex-start;
 }
 
-    /* ! MAIN TEXT INPUT */
+    /* ! BOTTOM MAIN -> TEXT INPUT */
 .chat_input {
     height: 70px;
     vertical-align: middle;
