@@ -13,6 +13,7 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
     width: 100%;
+    min-width: 1200px ;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -20,6 +21,7 @@ body {
 #vue_box {
     max-width: 1500px;
     width: 80%;
+    min-width: 1000px;
     margin: auto;
     margin-top: 23px;
     margin-bottom: 23px;
@@ -27,13 +29,15 @@ body {
         /* border: blue 3px solid; */
 }
 
+p {
+    font-weight: 600;
+}
+
 .profile_pic {
     border-radius: 50%;
     height: 60px;
 }
-p {
-    font-weight: 600;
-}
+
 .active {
     background-color: #e9ebeb;
 }
@@ -42,7 +46,7 @@ aside {
     background-color: #fafafa;
     /* background-color: blue; */
     width: 30%;
-    min-width: 350px;
+    min-width: 300px;
     float: left;
     height: 100%;
 
@@ -163,9 +167,10 @@ aside {
     /******************** MAIN */
 main {
     width: 70%;
+    min-width: 700px;
     float: right;
     height: 100%;
-        /* border: palevioletred 3px solid; */
+        border: palevioletred 3px solid;
 }
 
     /* ? MAIN NAV */
@@ -205,7 +210,6 @@ main {
     background: url("img/mine.jpg");
     height: calc(100% - 150px);
 }
-        /* todo MESSAGGI */
 
 #chat_messages{
     display: flex;
@@ -235,17 +239,40 @@ main {
 .chat_input {
     height: 70px;
     vertical-align: middle;
-    padding: 20px;
-    background-color: red;
+    background-color: #f3eeea;
 }
-.chat_input ul {
+.chat_input *{
+    /* border: blue 2px solid; */
+}
+/* .chat_input ul {
     display: flex;
-    justify-content: space-between;
-}
+    justify-content: stretch;
+} */
 .chat_input ul li {
     display: inline-block;
+    width: 10%;
+    text-align: center;
+    padding: 10px;
 }
-hl li .fake_input input {
+.chat_input ul li i{
+    font-size: 25px;
+    color: #6B7376;
+    padding: 15px;
+    cursor: pointer;
+        /* border: red 2px solid; */
+}
+.chat_input ul li.new_message {
+    width: 79%;
+}
+.chat_input ul li.new_message input{
     width: 100%;
-    background-color: sienna;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+
+#microphone: {
+    color: red;
+
 }
