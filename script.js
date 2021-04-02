@@ -86,15 +86,19 @@ var vue_box = new Vue (
                         }
                     ],
                 },
+                
             ],
             contact_index : 0,
-            // record : false,
+            recording : false,
         },
-        methods : {
+        // methods : {
             
             
             
-        }
+        // },
+        // computed : {
+
+        // }
     }
 );
 // alert("HEllo");   

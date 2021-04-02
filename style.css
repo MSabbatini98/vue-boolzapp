@@ -14,8 +14,8 @@ body {
     height: 100vh;
     width: 100%;
     min-width: 1200px ;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    /* overflow-y: hidden;
+    overflow-x: hidden; */
 }
 
 #vue_box {
@@ -32,7 +32,12 @@ body {
 p {
     font-weight: 600;
 }
-
+.red{
+    color: red;
+}
+.green{
+    color: greenyellow;
+}
 .profile_pic {
     border-radius: 50%;
     height: 60px;
@@ -248,10 +253,6 @@ main {
 .chat_input *{
     /* border: blue 2px solid; */
 }
-/* .chat_input ul {
-    display: flex;
-    justify-content: stretch;
-} */
 .chat_input ul li {
     display: inline-block;
     width: 10%;
@@ -261,7 +262,7 @@ main {
 .chat_input ul li i{
     font-size: 25px;
     color: #6B7376;
-    padding: 15px;
+    padding: 10px 12px;
     cursor: pointer;
         /* border: red 2px solid; */
 }
@@ -271,28 +272,79 @@ main {
 .chat_input ul li.new_message input{
     width: 100%;
     font-size: 20px;
-    border-radius: 10px;
+    border-radius: 23px;
     border: none;
-    padding: 10px;
+    padding: 10px 15px;
 }
 .chat_input button {
     border: none;
     outline: none;
 }
-.chat_input button:active i{
-    color: red;
-}
+
 /*! Recording slider*/
-/*
-.chat_input button:active .recording_box{
-    display: inline-block;
+.chat_input ul li.recording_message {
+    width: calc(70% - 75px);
 }
-.recording_box {
-    position: absolute;
-    transition: 1s;
-    animation: slideIn 200 timing-function delay iteration-count direction fill-mode;
-} */
-.recording {
+.chat_input.chat_input_recording ul li:last-child {
+    width: 11%;
+}
+.chat_input_recording ul li i.fa-microphone {
     color: red;
-    transform: scale(1.5);
+    border-radius: 50%;
+    background-color: #00000023;
+}
+.chat_input_recording #recording_box{
+    border: grey;
+    border-radius: 20px;
+}
+.chat_input.chat_input_recording ul li.new_message input{
+    width: 100%;
+    font-size: 20px;
+    border-radius: 23px;
+    border: none;
+    padding: 10px 15px;
+}
+.chat_input.chat_input_recording ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    text-align: center;
+}
+
+li.recording_box {
+    width: 220px !important;
+}
+.chat_input.chat_input_recording ul.recording_mini_box{
+    width: 100%;
+    border-radius: 25px;
+        /* border: red solid 1px; */
+}
+.chat_input.chat_input_recording ul.recording_mini_box li{
+    width: 33%;
+    padding: 0;
+}
+.chat_input.chat_input_recording ul.recording_mini_box i {
+    font-size: 25px;
+    width: 37.5px;
+    border-radius: 50%;
+    padding: 5px;
+    margin: 5px;
+
+}
+ul.recording_mini_box i.fa-check {
+    color: yellowgreen;
+    border: 1px solid yellowgreen;
+}
+ul.recording_mini_box i.fa-check:hover {
+    color: white;
+    background-color: yellowgreen;
+}
+ul.recording_mini_box i.fa-times {
+    color: red;
+    border: 1px solid red;
+}
+ul.recording_mini_box i.fa-times:hover {
+    color: white;
+    background-color: red;
 }

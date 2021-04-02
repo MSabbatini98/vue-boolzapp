@@ -106,21 +106,54 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam consequuntur sunt, suscipit, dolores quia, repudiandae ex natus modi aliquam cumque officiis totam autem aperiam pariatur sapiente qui. Iure, iusto in.
                 </p>
             </div> 
-            <div class="chat_input">
+            <div class="chat_input"  v-if="!recording">
                 <ul>
                     <li><i class="far fa-smile"></i></li>
+
                     <li class="new_message">
                         <input type="text" placeholder="Scrivi un messaggio">
                     </li>
                     <li >
-                        <button>
-                            <i class="fas fa-microphone"></i>
+                        <button @click= "recording = !recording">
+                            <i class="fas fa-microphone" :class= "{recording : recording}" ></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="chat_input chat_input_recording"  v-if="recording">
+                <ul>
+                    <li><i class="far fa-smile"></i></li>
+
+                    <li v-if="recording" class ="recording_message new_message">
+                        <input class="recording_input" type="text" placeholder="Scrivi un messaggio">
+                       
+                    </li>
+                    <li class="recording_box">
+                        <ul class="recording_mini_box">
+                            <li>
+                                <!-- todo send @click="send()" -->
+                                <i class="fas fa-check" ></i>
+
+                            </li>
+                            <!-- todo prendere timer da libreria day.js -->
+                            <li class="timer">
+                               .{.{timer}}
+                            </li>
+                            <li>
+                                <i class="fas fa-times" @click="recording = false"></i>
+                            </li>
+                          
+                        </ul>
+                    </li>
+                    <li>
+                        <button @click= "recording = !recording">
+                            <i class="fas fa-microphone" :class= "{recording : recording}" ></i>
                         </button>
                     </li>
                 </ul>
             </div>
             <!-- <div class="recording_box">
-                <!-- todo add counter in secs -->
+                todo add counter in seconds
                 Hello
             </div> -->
         </main>
