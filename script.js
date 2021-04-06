@@ -2,9 +2,34 @@ var vue_box = new Vue (
     {
         el : "#vue_box",
         data :{
+
             contacts: [ 
                 {
+                    name: 'Tommaso',
+                    id : 0,
+                    avatar: '_5',
+                    visible: true,
+                    messages: [
+                        {
+                        date: '10/01/2020 15:30:55',
+                        message: 'Hai lorem loremweòkldjfs.n,v  a spasso il cane?',
+                        status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 15:50:00',
+                            message: 'Ricordati di dargli da mangiare',
+                            status: 'sent'
+                        },
+                        {
+                            date: '10/01/2020 16:15:22',
+                            message: 'Tutto fatto!',
+                            status: 'received'
+                        }
+                    ],
+                },
+                {
                     name: 'Michele',
+                    id : 1,
                     avatar: '_1',
                     visible: true,
                     messages: [
@@ -28,6 +53,7 @@ var vue_box = new Vue (
                 {
                     name: 'Fabio',
                     avatar: '_2',
+                    id : 2,
                     visible: true,
                     messages: [
                         {
@@ -50,6 +76,7 @@ var vue_box = new Vue (
                 {
                     name: 'Samuele',
                     avatar: '_3',
+                    id : 3,
                     visible: true,
                     messages: [
                         {
@@ -72,6 +99,7 @@ var vue_box = new Vue (
                 {
                     name: 'Luisa',
                     avatar: '_4',
+                    id : 4,
                     visible: true,
                     messages: [
                         {
@@ -90,7 +118,22 @@ var vue_box = new Vue (
             ],
             contact_index : 0,
             recording : false,
+            isActive : false,
+            userId : 0,
+
         },
+        methods: {
+            myFilter: function() {
+                this.isActive = !this.isActive;
+                console.log(this);
+                console.log(this.isActive);
+
+              // some code to filter users
+            },
+            selectItem(el){
+                this.userId = el.id;
+            },
+        }
         // methods : {
             
             

@@ -56,19 +56,30 @@
                         <!-- <i>, cerca con label and input -->
                     </div>
                 </div>
+
                 <!-- ! section 4 chat previews-->
                 <div class="aside_main">
                     <ul>
-                        <li v-for = "(contact, index) in contacts" @click ="contact_index = index">
-                            <!-- Immagine profilo -->
+                        <li @click="selectItem(contact)" v-for="(contact, index) in contacts"  class = "user" v-bind:class="{active:(userId == index)}">
                             <img class="profile_pic" :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt=" 'foto profilo di ' + contact.name">
+                            <h3>{{contact.name}}</h3>
+                          </li>
+                        <!-- <li v-for = "(contact, index) in contacts">
+
+                            
                             
                             <div class= "user_name ">
                                 <p > {{contact.name}}</p> 
                             </div>
                              
+                            <div class="last_message" v-for ="(text, value, index ) in contact">
+                                <p>
+                                    {{index}}  {{value}} {{value[index]}}
+                                </p>
+
+                            </div>
                         </li>
-        
+         -->
                     </ul>
                 </div>
             </aside>

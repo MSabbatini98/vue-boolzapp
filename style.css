@@ -46,7 +46,7 @@ p {
 }
 
 .active {
-    background-color: #e9ebeb;
+    background-color: grey;
 }
 /******************** ASIDE */
 aside {
@@ -140,12 +140,15 @@ aside {
     overflow-y: scroll;
         /* border: darkgoldenrod 1px solid; */
 }
-.aside_main ul li{
+.aside_main ul li.user{
     position: relative;
     padding: 12px 8px;
     list-style-type: none;
     cursor: pointer;
     border-bottom: blue solid 3px;
+}
+.aside_main ul li:hover{
+    background-color: rgba(0,150,136,1);
 }
 .aside_main ul li:first-child{
     border-top: red solid 3px;
