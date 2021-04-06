@@ -34,9 +34,7 @@
 p {
     font-weight: 600;
 }
-.red{
-    color: red;
-}
+
 .green{
     color: greenyellow;
 }
@@ -46,7 +44,7 @@ p {
 }
 
 .active {
-    background-color: grey;
+    background-color: #B1B1B1;
 }
 /******************** ASIDE */
 aside {
@@ -93,6 +91,9 @@ aside {
     padding: 15px;
     /* height: 80px;  */
 }
+.notifications p {
+    font-size: 14px;
+}
 .notification_icon, 
 .notification_text {
     display: inline-block;
@@ -102,7 +103,7 @@ aside {
     display: inline-block;
     background-color: white;
     border-radius: 50%;
-    padding: 14px 12px;
+    padding: 10px 8px;
     margin-right: 10px;
         /* border: orchid 3px solid; */
 }
@@ -145,13 +146,13 @@ aside {
     padding: 12px 8px;
     list-style-type: none;
     cursor: pointer;
-    border-bottom: blue solid 3px;
+    /* border-bottom: blue solid 3px; */
 }
 .aside_main ul li:hover{
     background-color: rgba(0,150,136,1);
 }
 .aside_main ul li:first-child{
-    border-top: red solid 3px;
+    border-top: #B1B1B1 solid 1px;
 }
 
 .aside_main ul li img, 
@@ -184,17 +185,13 @@ main {
     min-width: 700px;
     float: right;
     height: 100%;
-        border: palevioletred 3px solid;
+        /* border: palevioletred 3px solid; */
 }
 
     /* ? MAIN NAV */
-.main_nav {
-    background-color: #eaeaea;
-    display: flex;
-    justify-content: space-between;
-}
 .main_nav{
     display: flex;
+    background-color: #eaeaea;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
@@ -231,6 +228,7 @@ main {
 }
 .sent,
 .received{
+    list-style: none;
     width: 40%;
     padding: 15px;
     padding-bottom: 20px;
@@ -238,13 +236,13 @@ main {
     margin-top: 10px;
 }
 .sent{
-    margin-right: 8%;
+    margin-left: 56%;
     background-color: #d5f9ba;
     align-self: flex-end;
 
 }
 .received{
-    margin-left: 8%;
+    margin-left: 6%;
     background-color: white;
     align-self: flex-start;
 }
@@ -316,7 +314,6 @@ main {
     width: 100%;
     text-align: center;
 }
-
 li.recording_box {
     width: 220px !important;
 }

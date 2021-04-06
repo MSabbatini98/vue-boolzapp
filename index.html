@@ -60,9 +60,9 @@
                 <!-- ! section 4 chat previews-->
                 <div class="aside_main">
                     <ul>
-                        <li @click="selectItem(contact)" v-for="(contact, index) in contacts"  class = "user" v-bind:class="{active:(userId == index)}">
-                            <img class="profile_pic" :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt=" 'foto profilo di ' + contact.name">
-                            <h3>{{contact.name}}</h3>
+                        <li @click="selectItem(contact)" v-for="(contact, index) in contacts"  class = "user" v-bind:class="{active:(user_id == index)}">
+                            <img class="profile_pic" :src=" 'img/avatar_' + contacts[index].id + '.jpg' " :alt=" 'foto profilo di ' + contact.name">
+                            <p>{{contact.name}}</p>
                           </li>
                         <!-- <li v-for = "(contact, index) in contacts">
 
@@ -88,9 +88,12 @@
                 <div class="main_nav">
                     <!-- Foto, nome e last access -->
                     <div class="contact_info">
-                        <img class ="profile_pic" src="img/avatar_8.jpg" alt="">
+                        <img class="profile_pic" :src=" 'img/avatar_' + contacts[user_id].id + '.jpg' " :alt=" 'foto profilo di ' + contacts.name">
                         <div class="side_text">
-                            <!-- todo if active, print {{contact.name}} -->
+                            <p>
+                                {{contacts[user_id].name}}
+                                <!-- {{contacts[user_id].id}} -->
+                            </p>
                             <!-- <p>{{contact[contact_index].name}}</p> -->
                             <small>
                                 Ultimo accesso 
@@ -109,23 +112,25 @@
     
                 <!-- zona messaggi -->
                 <div id="chat_messages">
-                    <p class="sent">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione at unde amet impedit a, officia praesentium quos temporibus modi odit repellendus quo optio nostrum fugit earum mollitia animi. Ea, iusto.
-    
-    
-                    </p>
-                    <p class ="received">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam consequuntur sunt, suscipit, dolores quia, repudiandae ex natus modi aliquam cumque officiis totam autem aperiam pariatur sapiente qui. Iure, iusto in.
-                    </p>
+                    <ul >
+                        <li class="single_text"  v-bind:class="{sent:(message.status == 'sent'), received:(message.status == 'received')}" v-for="message in contacts[user_id].messages">
+                            <p>
+                                 {{message.message}}
+                            </p>
+                            <small>
+                                {{message.date}}
+                            </small>
+                        </li>
+                      </ul>
                 </div> 
                 <div class="chat_input"  v-if="!recording">
                     <ul>
                         <li><i class="far fa-smile"></i></li>
     
                         <li class="new_message">
-                            <input type="text" placeholder="Scrivi un messaggio">
+                            <input type="text" v-model="new_message" v-on:keyup.13="insertNewMessage(new_message)" type="text" name="" placeholder="Scrivi un messaggio">
                         </li>
-                        <li >
+                        <li>
                             <button @click= "recording = !recording">
                                 <i class="fas fa-microphone" :class= "{recording : recording}" ></i>
                             </button>

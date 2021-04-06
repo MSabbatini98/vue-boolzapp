@@ -7,22 +7,21 @@ var vue_box = new Vue (
                 {
                     name: 'Tommaso',
                     id : 0,
-                    avatar: '_5',
                     visible: true,
                     messages: [
                         {
-                        date: '10/01/2020 15:30:55',
-                        message: 'Hai lorem loremweòkldjfs.n,v  a spasso il cane?',
-                        status: 'sent'
+                            date: '10/01/2020 15:30:55',
+                            message: 'Hai lorem loremweòkldjfs.n,v  a spasso il cane?',
+                            status: 'sent'
                         },
                         {
                             date: '10/01/2020 15:50:00',
-                            message: 'Ricordati di dargli da mangiare',
+                            message: 'Ricordati di zvbxcfsdxcvsb<bfxc dargli da mangiare',
                             status: 'sent'
                         },
                         {
                             date: '10/01/2020 16:15:22',
-                            message: 'Tutto fatto!',
+                            message: 'Tutdsfzcvxs<dzfxvto fatto!',
                             status: 'received'
                         }
                     ],
@@ -116,23 +115,32 @@ var vue_box = new Vue (
                 },
                 
             ],
-            contact_index : 0,
             recording : false,
+            new_message: [],
             isActive : false,
-            userId : 0,
+            user_id : 0,
 
         },
         methods: {
-            myFilter: function() {
-                this.isActive = !this.isActive;
-                console.log(this);
-                console.log(this.isActive);
-
-              // some code to filter users
-            },
             selectItem(el){
-                this.userId = el.id;
+                // console.log(this.user_id)
+                this.user_id = el.id;
+                // console.log(el.id)
+
             },
+            insertNewMessage(textinput){
+                const object = { 
+                    // todo use DynamicsCompressorNode.js to get time of day
+                    
+                    date: "5.45", 
+                    message: textinput, 
+                    status: "sent"
+                };
+                 console.log(textinput);
+                // console.log(this.user_id);
+                this.contacts[this.user_id].messages.push(object);
+                this.new_message="";
+            }
         }
         // methods : {
             
