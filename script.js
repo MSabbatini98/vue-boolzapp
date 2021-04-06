@@ -2,7 +2,7 @@ var vue_box = new Vue (
     {
         el : "#vue_box",
         data :{
-            contacts: [
+            contacts: [ 
                 {
                     name: 'Michele',
                     avatar: '_1',

@@ -21,142 +21,144 @@
     
 </head>
 <body>
-    <div id="vue_box">
-        <aside>
-            <div class="aside_top">
-                <!--  ? section 1 user_nav  -->
-                <div class="aside_nav">
-                    <div class="user_profile">
-                        <img class="profile_pic" src="img/avatar_io.jpg" alt="Mia immagine del profilo">
-                        <p>Nome Utente</p>
+    <div class="container_vue">
+        <div id="vue_box">
+            <aside>
+                <div class="aside_top">
+                    <!--  ? section 1 user_nav  -->
+                    <div class="aside_nav">
+                        <div class="user_profile">
+                            <img class="profile_pic" src="img/avatar_user.jpg" alt="Mia immagine del profilo">
+                            <p>Matteo</p>
+                        </div>
+    
+                        <ul>
+                            <li> <i class="fas fa-circle-notch"></i> </li>
+                            <li> <i class="fas fa-comment-alt"></i> </li>
+                            <li> <i class="fas fa-ellipsis-v"></i> </li>
+                        </ul>
                     </div>
-
+    
+                    <!--  ? section 2  notifiche  -->
+                    <div class="notifications">
+                        <div class="notification_icon">
+                            <i class="fas fa-bell-slash"></i>
+                        </div>
+                        <div class="notification_text">
+                            <p>Ricevi notifiche di nuovi messaggi</p>
+                            <a href="https://faq.whatsapp.com/web/chats/how-to-manage-your-notifications">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <!--  ? section 3  search -->
+                    <div class="search">
+                        <label for="chat_search"><i class="fas fa-search"></i></label> 
+                        <input id="chat_search" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <!-- <i>, cerca con label and input -->
+                    </div>
+                </div>
+                <!-- ! section 4 chat previews-->
+                <div class="aside_main">
                     <ul>
-                        <li> <i class="fas fa-circle-notch"></i> </li>
-                        <li> <i class="fas fa-comment-alt"></i> </li>
+                        <li v-for = "(contact, index) in contacts" @click ="contact_index = index">
+                            <!-- Immagine profilo -->
+                            <img class="profile_pic" :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt=" 'foto profilo di ' + contact.name">
+                            
+                            <div class= "user_name ">
+                                <p > {{contact.name}}</p> 
+                            </div>
+                             
+                        </li>
+        
+                    </ul>
+                </div>
+            </aside>
+    
+            <main>
+                <div class="main_nav">
+                    <!-- Foto, nome e last access -->
+                    <div class="contact_info">
+                        <img class ="profile_pic" src="img/avatar_8.jpg" alt="">
+                        <div class="side_text">
+                            <!-- todo if active, print {{contact.name}} -->
+                            <!-- <p>{{contact[contact_index].name}}</p> -->
+                            <small>
+                                Ultimo accesso 
+                                <!-- todo inserire numero random tra 0 e 1M, calcolare giorni, e inserire "ultimo accesso secs fa/ore fa/ giorni fa/..." -->
+                                <span>3 hours ago</span>
+                            </small>
+                        </div>
+                    </div>
+                    <!-- side options -->
+                    <ul>
+                        <li> <i class="fas fa-search"></i> </li>
+                        <li> <i class="fas fa-paperclip"></i> </li>
                         <li> <i class="fas fa-ellipsis-v"></i> </li>
                     </ul>
                 </div>
-
-                <!--  ? section 2  notifiche  -->
-                <div class="notifications">
-                    <div class="notification_icon">
-                        <i class="fas fa-bell-slash"></i>
-                    </div>
-                    <div class="notification_text">
-                        <p>Ricevi notifiche di nuovi messaggi</p>
-                        <a href="https://faq.whatsapp.com/web/chats/how-to-manage-your-notifications">Attiva notifiche desktop</a>
-                    </div>
-                </div>
-                <!--  ? section 3  search -->
-                <div class="search">
-                    <label for="chat_search"><i class="fas fa-search"></i></label> 
-                    <input id="chat_search" type="text" placeholder="Cerca o inizia una nuova chat">
-                    <!-- <i>, cerca con label and input -->
-                </div>
-            </div>
-            <!-- ! section 4 chat previews-->
-            <div class="aside_main">
-                <ul>
-                    <li v-for = "(contact, index) in contacts" @click ="contact_index = index">
-                        <!-- Immagine profilo -->
-                        <img class="profile_pic" :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt=" 'foto profilo di ' + contact.name">
-                        
-                        <div class= "user_name ">
-                            <p > {{contact.name}}</p> 
-                        </div>
-                         
-                    </li>
     
-                </ul>
-            </div>
-        </aside>
-
-        <main>
-            <div class="main_nav">
-                <!-- Foto, nome e last access -->
-                <div class="contact_info">
-                    <img class ="profile_pic" src="img/avatar_8.jpg" alt="">
-                    <div class="side_text">
-                        <!-- todo if active, print {{contact.name}} -->
-                        <!-- <p>{{contact[contact_index].name}}</p> -->
-                        <small>
-                            Ultimo accesso 
-                            <!-- todo inserire numero random tra 0 e 1M, calcolare giorni, e inserire "ultimo accesso secs fa/ore fa/ giorni fa/..." -->
-                            <span>3 hours ago</span>
-                        </small>
-                    </div>
+                <!-- zona messaggi -->
+                <div id="chat_messages">
+                    <p class="sent">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione at unde amet impedit a, officia praesentium quos temporibus modi odit repellendus quo optio nostrum fugit earum mollitia animi. Ea, iusto.
+    
+    
+                    </p>
+                    <p class ="received">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam consequuntur sunt, suscipit, dolores quia, repudiandae ex natus modi aliquam cumque officiis totam autem aperiam pariatur sapiente qui. Iure, iusto in.
+                    </p>
+                </div> 
+                <div class="chat_input"  v-if="!recording">
+                    <ul>
+                        <li><i class="far fa-smile"></i></li>
+    
+                        <li class="new_message">
+                            <input type="text" placeholder="Scrivi un messaggio">
+                        </li>
+                        <li >
+                            <button @click= "recording = !recording">
+                                <i class="fas fa-microphone" :class= "{recording : recording}" ></i>
+                            </button>
+                        </li>
+                    </ul>
                 </div>
-                <!-- side options -->
-                <ul>
-                    <li> <i class="fas fa-search"></i> </li>
-                    <li> <i class="fas fa-paperclip"></i> </li>
-                    <li> <i class="fas fa-ellipsis-v"></i> </li>
-                </ul>
-            </div>
-
-            <!-- zona messaggi -->
-            <div id="chat_messages">
-                <p class="sent">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione at unde amet impedit a, officia praesentium quos temporibus modi odit repellendus quo optio nostrum fugit earum mollitia animi. Ea, iusto.
-
-
-                </p>
-                <p class ="received">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam consequuntur sunt, suscipit, dolores quia, repudiandae ex natus modi aliquam cumque officiis totam autem aperiam pariatur sapiente qui. Iure, iusto in.
-                </p>
-            </div> 
-            <div class="chat_input"  v-if="!recording">
-                <ul>
-                    <li><i class="far fa-smile"></i></li>
-
-                    <li class="new_message">
-                        <input type="text" placeholder="Scrivi un messaggio">
-                    </li>
-                    <li >
-                        <button @click= "recording = !recording">
-                            <i class="fas fa-microphone" :class= "{recording : recording}" ></i>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-            <div class="chat_input chat_input_recording"  v-if="recording">
-                <ul>
-                    <li><i class="far fa-smile"></i></li>
-
-                    <li v-if="recording" class ="recording_message new_message">
-                        <input class="recording_input" type="text" placeholder="Scrivi un messaggio">
-                       
-                    </li>
-                    <li class="recording_box">
-                        <ul class="recording_mini_box">
-                            <li>
-                                <!-- todo send @click="send()" -->
-                                <i class="fas fa-check" ></i>
-
-                            </li>
-                            <!-- todo prendere timer da libreria day.js -->
-                            <li class="timer">
-                               .{.{timer}}
-                            </li>
-                            <li>
-                                <i class="fas fa-times" @click="recording = false"></i>
-                            </li>
-                          
-                        </ul>
-                    </li>
-                    <li>
-                        <button @click= "recording = !recording">
-                            <i class="fas fa-microphone" :class= "{recording : recording}" ></i>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-            <!-- <div class="recording_box">
-                todo add counter in seconds
-                Hello
-            </div> -->
-        </main>
+                <div class="chat_input chat_input_recording"  v-if="recording">
+                    <ul>
+                        <li><i class="far fa-smile"></i></li>
+    
+                        <li v-if="recording" class ="recording_message new_message">
+                            <input class="recording_input" type="text" placeholder="Scrivi un messaggio">
+                           
+                        </li>
+                        <li class="recording_box">
+                            <ul class="recording_mini_box">
+                                <li>
+                                    <!-- todo send @click="send()" -->
+                                    <i class="fas fa-check" ></i>
+    
+                                </li>
+                                <!-- todo prendere timer da libreria day.js -->
+                                <li class="timer">
+                                   .{.{timer}}
+                                </li>
+                                <li>
+                                    <i class="fas fa-times" @click="recording = false"></i>
+                                </li>
+                              
+                            </ul>
+                        </li>
+                        <li>
+                            <button @click= "recording = !recording">
+                                <i class="fas fa-microphone" :class= "{recording : recording}" ></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="recording_box">
+                    todo add counter in seconds
+                    Hello
+                </div> -->
+            </main>
+        </div>            
     </div>
 
 
