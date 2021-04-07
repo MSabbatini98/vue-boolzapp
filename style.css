@@ -226,6 +226,10 @@ main {
     display: flex;
     flex-direction: column;
 }
+#chat_messages ul{
+    height: 100%;
+    overflow-y: scroll;
+}
 .sent,
 .received{
     list-style: none;
@@ -253,9 +257,7 @@ main {
     vertical-align: middle;
     background-color: #f3eeea;
 }
-.chat_input *{
-    /* border: blue 2px solid; */
-}
+
 .chat_input ul li {
     display: inline-block;
     width: 10%;

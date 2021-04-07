@@ -129,6 +129,36 @@ var vue_box = new Vue (
 
             },
             insertNewMessage(textinput){
+<<<<<<< HEAD
+                let object = { 
+                    // todo use day.js to get time of day 
+                    date: "just now", 
+                    // message: this.new_message, 
+                    message: textinput, 
+                    status: "sent"
+                };
+                let active_user__chat = this.contacts[this.user_id];
+                console.log(textinput);
+                // console.log(this.user_id);
+                
+                active_user__chat.messages.push(object);
+                this.new_message= "" ;
+
+                let self = this;
+
+                setTimeout(function() {
+
+                    let object = { 
+                        // todo use day.js to get time of day 
+                        date: "just now", 
+                        // todo getFromAnswers 
+                        message: "ok", 
+                        status: "received"
+                    };
+
+                    self.contacts[self.user_id].messages.push(object);
+                }, 1500);
+=======
                 const object = { 
                     // todo use DynamicsCompressorNode.js to get time of day
                     
@@ -140,6 +170,7 @@ var vue_box = new Vue (
                 // console.log(this.user_id);
                 this.contacts[this.user_id].messages.push(object);
                 this.new_message="";
+>>>>>>> main
             }
         }
         // methods : {
