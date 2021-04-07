@@ -84,9 +84,10 @@
                 </div>
             </aside>
     
+            <!-- ? finestra di destra, main -->
             <main>
                 <div class="main_nav">
-                    <!-- Foto, nome e last access -->
+                    <!-- ?Foto, nome e last access -->
                     <div class="contact_info">
                         <img class="profile_pic" :src=" 'img/avatar_' + contacts[user_id].id + '.jpg' " :alt=" 'foto profilo di ' + contacts.name">
                         <div class="side_text">
@@ -102,7 +103,7 @@
                             </small>
                         </div>
                     </div>
-                    <!-- side options -->
+                    <!--? side options -->
                     <ul>
                         <li> <i class="fas fa-search"></i> </li>
                         <li> <i class="fas fa-paperclip"></i> </li>
@@ -110,7 +111,7 @@
                     </ul>
                 </div>
     
-                <!-- zona messaggi -->
+                <!--? zona messaggi -->
                 <div id="chat_messages">
                     <ul >
                         <li class="single_text"  v-bind:class="{sent:(message.status == 'sent'), received:(message.status == 'received')}" v-for="message in contacts[user_id].messages">
