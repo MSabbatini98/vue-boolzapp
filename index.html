@@ -38,7 +38,6 @@
                             <li> <i class="fas fa-ellipsis-v"></i> </li>
                         </ul>
                     </div>
-    
                     <!--  ? section 2  notifiche  -->
                     <div class="notifications">
                         <div class="notification_icon">
@@ -52,7 +51,7 @@
                     <!--  ? section 3  search -->
                     <div class="search">
                         <label for="chat_search"><i class="fas fa-search"></i></label> 
-                        <input id="chat_search" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input id="chat_search" type="text" placeholder="Cerca o inizia una nuova chat" v-model="search" @keyup = "trovaContatti">
                         <!-- <i>, cerca con label and input -->
                     </div>
                 </div>
@@ -60,26 +59,10 @@
                 <!-- ! section 4 chat previews-->
                 <div class="aside_main">
                     <ul>
-                        <li @click="selectItem(contact)" v-for="(contact, index) in contacts"  class = "user" v-bind:class="{active:(user_id == index)}">
+                        <li @click="selectItem(contact)" v-for="(contact, index) in contacts"  class = "user" v-bind:class="{active:(user_id == index)}" v-show="contact.visible">
                             <img class="profile_pic" :src=" 'img/avatar_' + contacts[index].id + '.jpg' " :alt=" 'foto profilo di ' + contact.name">
                             <p>{{contact.name}}</p>
                           </li>
-                        <!-- <li v-for = "(contact, index) in contacts">
-
-                            
-                            
-                            <div class= "user_name ">
-                                <p > {{contact.name}}</p> 
-                            </div>
-                             
-                            <div class="last_message" v-for ="(text, value, index ) in contact">
-                                <p>
-                                    {{index}}  {{value}} {{value[index]}}
-                                </p>
-
-                            </div>
-                        </li>
-         -->
                     </ul>
                 </div>
             </aside>
@@ -98,7 +81,6 @@
                             <!-- <p>{{contact[contact_index].name}}</p> -->
                             <small>
                                 Ultimo accesso 
-                                <!-- todo inserire numero random tra 0 e 1M, calcolare giorni, e inserire "ultimo accesso secs fa/ore fa/ giorni fa/..." -->
                                 <span>3 hours ago</span>
                             </small>
                         </div>
@@ -149,13 +131,11 @@
                         <li class="recording_box">
                             <ul class="recording_mini_box">
                                 <li>
-                                    <!-- todo send @click="send()" -->
                                     <i class="fas fa-check" ></i>
     
                                 </li>
-                                <!-- todo prendere timer da libreria day.js -->
                                 <li class="timer">
-                                   .{.{timer}}
+                                   {{timer()}}
                                 </li>
                                 <li>
                                     <i class="fas fa-times" @click="recording = false"></i>
@@ -170,10 +150,6 @@
                         </li>
                     </ul>
                 </div>
-                <!-- <div class="recording_box">
-                    todo add counter in seconds
-                    Hello
-                </div> -->
             </main>
         </div>            
     </div>

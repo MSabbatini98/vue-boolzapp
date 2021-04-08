@@ -135,11 +135,14 @@ aside {
     color:   #B1B1B1;
 }
     
-    /* todo section 4 chat previews*/
+    /* ? section 4 chat previews*/
 .aside_main {
     height: calc(100% - 232px);
     overflow-y: scroll;
         /* border: darkgoldenrod 1px solid; */
+}
+li.user p{
+    display: inline-block;
 }
 .aside_main ul li.user{
     position: relative;

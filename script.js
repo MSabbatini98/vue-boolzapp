@@ -119,6 +119,7 @@ var vue_box = new Vue (
             new_message: [],
             isActive : false,
             user_id : 0,
+            search : ""
 
         },
         methods: {
@@ -129,9 +130,7 @@ var vue_box = new Vue (
 
             },
             insertNewMessage(textinput){
-<<<<<<< HEAD
                 let object = { 
-                    // todo use day.js to get time of day 
                     date: "just now", 
                     // message: this.new_message, 
                     message: textinput, 
@@ -149,28 +148,32 @@ var vue_box = new Vue (
                 setTimeout(function() {
 
                     let object = { 
-                        // todo use day.js to get time of day 
                         date: "just now", 
-                        // todo getFromAnswers 
+                        // try  getFromAnswers 
                         message: "ok", 
                         status: "received"
                     };
 
                     self.contacts[self.user_id].messages.push(object);
                 }, 1500);
-=======
-                const object = { 
-                    // todo use DynamicsCompressorNode.js to get time of day
-                    
-                    date: "5.45", 
-                    message: textinput, 
-                    status: "sent"
-                };
-                 console.log(textinput);
-                // console.log(this.user_id);
-                this.contacts[this.user_id].messages.push(object);
-                this.new_message="";
->>>>>>> main
+            },
+            trovaContatti: function () {
+                // console.log(this.contacts),
+                this.contacts.forEach(item => {
+                    console.log(item.name);
+                    let opt_search = item.name.toLowerCase();
+                    if (opt_search.includes(this.search)) {
+                        console.log(item.name, opt_search,  "YES"),
+                        item.visible = true;
+                    } else {
+                        console.log("NOO"),
+                        item.visible = false;
+                    }
+                });
+            },
+            setInterval(timer (
+                
+            ) {}, 1000),                
             }
         }
         // methods : {
