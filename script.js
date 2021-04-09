@@ -116,10 +116,12 @@ var vue_box = new Vue (
                 
             ],
             recording : false,
+            timer: 0,
+            orario: "",
             new_message: [],
             isActive : false,
             user_id : 0,
-            search : ""
+            search : "",
 
         },
         methods: {
@@ -130,9 +132,9 @@ var vue_box = new Vue (
 
             },
             insertNewMessage(textinput){
+                console.log(this.orario);
                 let object = { 
-                    date: "just now", 
-                    // message: this.new_message, 
+                    date : "just now",                    // message: this.new_message, 
                     message: textinput, 
                     status: "sent"
                 };
@@ -148,14 +150,23 @@ var vue_box = new Vue (
                 setTimeout(function() {
 
                     let object = { 
-                        date: "just now", 
+                        // date: this.orario, 
+                        date : "just now",
                         // try  getFromAnswers 
                         message: "ok", 
                         status: "received"
                     };
-
                     self.contacts[self.user_id].messages.push(object);
                 }, 1500);
+            },
+            insertNewAudioMessage : function () {
+                let audio_object = {
+                    date : "just now",
+                    message : "AUDIO MESSAGE",
+                    status : "sent",
+                };
+                this.contacts[this.user_id].messages.push(audio_object);
+                this.recording = !this.recording;
             },
             trovaContatti: function () {
                 // console.log(this.contacts),
@@ -171,19 +182,21 @@ var vue_box = new Vue (
                     }
                 });
             },
-            setInterval(timer (
-                
-            ) {}, 1000),                
-            }
-        }
-        // methods : {
-            
-            
-            
-        // },
-        // computed : {
+            // myTimer : function() {
+            //     if (this.recording == true) {
+            //         console.log(this.timer);
+            //         let recording_timer = setInterval(this.timer, 1000);
+            //         return this.timer;                    
+            //     }
 
-        // }
+            // },
+            // getDate : function () {
+            //     let ora = new Date();
+            //     this.orario += ora.toLocaleTimeString();
+            //     return this.orario;
+            // }
+             
+        }
     }
 );
 // alert("HEllo");   

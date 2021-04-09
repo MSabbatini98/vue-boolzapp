@@ -131,11 +131,12 @@
                         <li class="recording_box">
                             <ul class="recording_mini_box">
                                 <li>
-                                    <i class="fas fa-check" ></i>
+                                    <i class="fas fa-check " @click="insertNewAudioMessage()" ></i>
     
                                 </li>
                                 <li class="timer">
-                                   {{timer()}}
+                                    00.00
+                                    <!-- myTimer -->
                                 </li>
                                 <li>
                                     <i class="fas fa-times" @click="recording = false"></i>
